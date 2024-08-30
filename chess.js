@@ -162,3 +162,62 @@ function hybrid2(size,unit,Bcolor,shapes=[],demultiplyer){
     }
     return group;
 }
+
+
+function king(size,unit,Bcolor){
+    shapes=[
+        [1,2,2],
+        [1,2,7],
+        [1,2,2],
+        [2,3,14,2,2,'bottom'],
+        [2,13,12,8,8,'top'],
+        [1,3,25],
+        [2,22,14,8,8,0],
+        [1,4,38]
+    ]
+    return align(hybrid(size,unit,Bcolor,shapes,50));
+}
+
+function queen(size,unit,Bcolor){
+    shapes=[
+        [3,4,4],
+        [2,3,1,2,2,0,'bottom'],
+        [2,13,12,8,8,'top'],
+        [1,3,25],
+        [2,22,14,8,8,0],
+        [1,4,38]
+    ]
+    return align(hybrid(size,unit,Bcolor,shapes,50));
+}
+
+function queen2(size,unit,Bcolor){
+    shapes=[
+        [
+            [4,0,'transparent',6,Bcolor,0,'transparent',6,'transparent'],
+            [4,0,'transparent',8,Bcolor,4,'transparent',4,'transparent'],
+            [4,0,'transparent',6,Bcolor,6,'transparent',0,'transparent'],
+            'row'
+        ],
+        // [2,3,1,2,2,0,'bottom'],
+        [2,13,12,8,8,'top'],
+        [1,3,25],
+        [2,22,14,8,8,0],
+        [1,4,38]
+    ]
+    function val(k){
+        demultiplyer=50;
+        length=(size*k)/demultiplyer;
+        let str = length.toString() + unit;
+        return str;
+    }
+    let queen = align(hybrid2(size,unit,Bcolor,shapes,50));
+    let part = queen.querySelector('div');
+    part.style.display='flex';
+    part.style.alignItems = 'end';
+    parts = queen.querySelector('div').querySelectorAll('div');
+    // parts[0].style.transform='skew(10deg)';
+    // parts[2].style.transform='skew(-10deg)';
+    parts[1].style.marginLeft=val(4.2);
+    parts[1].style.marginRight=val(4.2);
+    return queen;
+}
