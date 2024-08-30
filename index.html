@@ -17,6 +17,21 @@
             --width:60px;
             --height:60px;
         }
+        .board .block{
+            width:var(--width);
+            height:var(--height);
+        }
+        .board .block{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            justify-content:space-evenly;
+            align-items:center;
+        }
+        
+        .board{
+            border:40px solid rgb(192, 100, 100);
+        }
     </style>
     <link rel="stylesheet" href="chess.css">
 </head>
@@ -24,9 +39,6 @@
 <body>
     <div class="test" style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-evenly;align-items:center;"></div>
     <div class="board"></div>
-    <script>
-        colors=['blue','red'];
-    </script>
     <script src="chess.js"></script>
     <script src="board.js"></script>
 </body>

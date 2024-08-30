@@ -356,7 +356,7 @@ function horse(size,unit,Bcolor,contrastColor){
         [5,35,15,Bcolor,0,'transparent',0,'transparent',0,'transparent',0,'transparent'],
         // [1,10,1],
         [1,8,30],
-        [5,2,2,'white',0,'transparent',0,'transparent',0,'transparent',0,'transparent'],
+        [5,2,2,contrastColor,0,'transparent',0,'transparent',0,'transparent',0,'transparent'],
         // [3,8,8],
         // [3,8,8],
         'column'

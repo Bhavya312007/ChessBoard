@@ -14,8 +14,10 @@ for(let i=0;i<8;i++){
         if((i+j)%2==0) div.style.background=colors[0];
         else div.style.background=colors[1];
     }
-    row.style.display='flex';
-    row.style.flexDirection='row';
+    // row.style.display='flex';
+    // row.style.flexDirection='row';
+    // row.style.display='block';
+    row.classList.add('row');
     board.append(row);
 }
 
@@ -26,7 +28,8 @@ shuffleArray(positions);
 let randomPosition = positions.slice(0,32);
 console.log(randomPosition);
 
-let blocks = document.querySelectorAll('.board div div');
+let blocks = document.querySelectorAll('.block');
+
 
 
 function setArrangements(){
@@ -39,6 +42,10 @@ function setArrangements(){
         [1,queen2,piecesColors[1]],
         [2,rook,piecesColors[0]],
         [2,rook,piecesColors[1]],
+        [2,bishop3,piecesColors[0],contrastColor],
+        [2,bishop3,piecesColors[1],contrastColor],
+        [2,horse,piecesColors[0],contrastColor],
+        [2,horse,piecesColors[1],contrastColor]
     ]
     
     let j=0;
